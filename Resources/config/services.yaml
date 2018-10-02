@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        public: false
+
+    LoremIpsum\RouteGeneratorBundle\RouteGeneratorInterface: '@LoremIpsum\RouteGeneratorBundle\RouteGenerator'
+
+    LoremIpsum\RouteGeneratorBundle\RouteGenerator:
+        class: LoremIpsum\RouteGeneratorBundle\RouteGenerator
+
+    LoremIpsum\RouteGeneratorBundle\Twig\RouteGeneratorExtension:
+        class: LoremIpsum\RouteGeneratorBundle\Twig\RouteGeneratorExtension
+        tags: ['twig.extension']
