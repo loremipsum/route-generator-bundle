@@ -9,15 +9,16 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class RouteGeneratorCompilerPass implements CompilerPassInterface
 {
+    const ROUTEHANDLER_TAG = 'loremipsum.route_handler';
+
     public function process(ContainerBuilder $container)
     {
         if (! $container->has(RouteGenerator::class)) {
             return;
         }
 
-        $definition = $container->findDefinition(RouteGenerator::class);
-
-        $taggedServices = $container->findTaggedServiceIds('loremipsum.route_handler');
+        $definition     = $container->findDefinition(RouteGenerator::class);
+        $taggedServices = $container->findTaggedServiceIds(self::ROUTEHANDLER_TAG);
 
         foreach ($taggedServices as $id => $tags) {
             $definition->addMethodCall('addRouteHandler', [new Reference($id)]);

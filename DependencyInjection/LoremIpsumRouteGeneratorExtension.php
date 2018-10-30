@@ -2,6 +2,7 @@
 
 namespace LoremIpsum\RouteGeneratorBundle\DependencyInjection;
 
+use LoremIpsum\RouteGeneratorBundle\RouteHandlerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -11,7 +12,10 @@ class LoremIpsumRouteGeneratorExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__) . '/Resources/config'));
         $loader->load('services.yaml');
+
+        $container->registerForAutoconfiguration(RouteHandlerInterface::class)
+                  ->addTag(RouteGeneratorCompilerPass::ROUTEHANDLER_TAG);
     }
 }
