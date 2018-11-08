@@ -29,3 +29,13 @@ class DefaultRouteHandler implements RouteHandlerInterface
     }
 }
 ```
+
+## Example usage
+
+```
+{% if <entity> is routable %}
+    <a href="{{ pathTo(<entity>) }}">{{ <entity> }}</a>
+{% else %}
+    {{ <entity> }}
+{% endif %}
+```
