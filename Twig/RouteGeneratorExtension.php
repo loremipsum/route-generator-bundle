@@ -2,6 +2,7 @@
 
 namespace LoremIpsum\RouteGeneratorBundle\Twig;
 
+use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
 use LoremIpsum\RouteGeneratorBundle\RouteGeneratorInterface;
 use Twig\Extension\AbstractExtension;
 
@@ -24,8 +25,25 @@ class RouteGeneratorExtension extends AbstractExtension
         ];
     }
 
+    public function getTests()
+    {
+        return [
+            new \Twig_Test('routable', [$this, 'isRoutable']),
+        ];
+    }
+
     public function pathTo($value, $view = null, $context = [])
     {
         return $this->routeGenerator->generate($value, $view, $context);
+    }
+
+    public function isRoutable($value, $view = null, $context = [])
+    {
+        try {
+            $this->routeGenerator->generate($value, $view, $context);
+        } catch (MissingRouteHandlerException $e) {
+            return false;
+        }
+        return true;
     }
 }
