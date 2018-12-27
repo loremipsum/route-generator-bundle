@@ -1,4 +1,6 @@
-# RouteGenerator
+# RouteGenerator bundle
+
+Symfony bundle to create routes to resources.
 
 ## Example route handler
 

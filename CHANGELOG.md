@@ -1,5 +1,9 @@
 # RouteGeneratorBundle Changelog
 
+## [0.1.3] - 2018-12-27
+### Fix
+- Fix possible string conversion error when using routable
+
 ## [0.1.2] - 2018-11-08
 ### Added
 - twig: Add routable test

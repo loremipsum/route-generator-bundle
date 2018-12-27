@@ -1,10 +1,10 @@
 {
     "name": "loremipsum/route-generator-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony RouteGeneratorBundle",
+    "description": "Symfony bundle to create routes to resources.",
     "keywords": ["router"],
     "homepage": "https://www.loremipsum.at",
-    "license": "proprietary",
+    "license": "MIT",
     "require": {
         "php": ">=7.0",
         "symfony/http-foundation": "^3.4 || ^4.0",
