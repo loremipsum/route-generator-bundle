@@ -20,7 +20,7 @@ class RouteGeneratorCompilerPass implements CompilerPassInterface
         $definition     = $container->findDefinition(RouteGenerator::class);
         $taggedServices = $container->findTaggedServiceIds(self::ROUTEHANDLER_TAG);
 
-        foreach ($taggedServices as $id => $tags) {
+        foreach (array_keys($taggedServices) as $id) {
             $definition->addMethodCall('addRouteHandler', [new Reference($id)]);
         }
     }
