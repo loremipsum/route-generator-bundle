@@ -3,7 +3,7 @@
 namespace LoremIpsum\RouteGeneratorBundle\Twig;
 
 use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
-use LoremIpsum\RouteGeneratorBundle\RouteGeneratorInterface;
+use LoremIpsum\RouteGeneratorBundle\Model\RouteGeneratorInterface;
 use Twig\Extension\AbstractExtension;
 
 class RouteGeneratorExtension extends AbstractExtension

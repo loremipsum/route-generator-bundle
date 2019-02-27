@@ -2,7 +2,7 @@
 
 namespace LoremIpsum\RouteGeneratorBundle\DependencyInjection;
 
-use LoremIpsum\RouteGeneratorBundle\RouteGenerator;
+use LoremIpsum\RouteGeneratorBundle\Utils\RouteGenerator;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

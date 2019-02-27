@@ -3,11 +3,9 @@ services:
         autowire: true
         public: false
 
-    LoremIpsum\RouteGeneratorBundle\RouteGeneratorInterface: '@LoremIpsum\RouteGeneratorBundle\RouteGenerator'
+    LoremIpsum\RouteGeneratorBundle\Model\RouteGeneratorInterface: '@LoremIpsum\RouteGeneratorBundle\Utils\RouteGenerator'
 
-    LoremIpsum\RouteGeneratorBundle\RouteGenerator:
-        class: LoremIpsum\RouteGeneratorBundle\RouteGenerator
+    LoremIpsum\RouteGeneratorBundle\Utils\RouteGenerator:
 
     LoremIpsum\RouteGeneratorBundle\Twig\RouteGeneratorExtension:
-        class: LoremIpsum\RouteGeneratorBundle\Twig\RouteGeneratorExtension
         tags: ['twig.extension']

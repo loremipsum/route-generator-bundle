@@ -1,6 +1,6 @@
 <?php
 
-namespace LoremIpsum\RouteGeneratorBundle;
+namespace LoremIpsum\RouteGeneratorBundle\Model;
 
 interface RouteHandlerInterface
 {

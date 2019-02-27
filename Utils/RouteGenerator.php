@@ -1,8 +1,10 @@
 <?php
 
-namespace LoremIpsum\RouteGeneratorBundle;
+namespace LoremIpsum\RouteGeneratorBundle\Utils;
 
 use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
+use LoremIpsum\RouteGeneratorBundle\Model\RouteGeneratorInterface;
+use LoremIpsum\RouteGeneratorBundle\Model\RouteHandlerInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class RouteGenerator implements RouteGeneratorInterface

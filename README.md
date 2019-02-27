@@ -4,13 +4,13 @@ Symfony bundle to create routes to resources.
 
 ## Example route handler
 
-```
+```php
 <?php
 
 namespace App\RouteHandlers;
 
 use App\Entity\User;
-use LoremIpsum\RouteGeneratorBundle\RouteHandlerInterface;
+use LoremIpsum\RouteGeneratorBundle\Model\RouteHandlerInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class DefaultRouteHandler implements RouteHandlerInterface

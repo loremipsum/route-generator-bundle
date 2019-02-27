@@ -1,5 +1,11 @@
 # RouteGeneratorBundle Changelog
 
+## [Unreleased 0.2.0]
+### Change
+- **BC-BREAK** Move RouteGenerator to Utils namespace
+- **BC-BREAK** Move RouteGeneratorInterface to Model namespace
+- **BC-BREAK** Move RouteHandlerInterface to Model namespace
+
 ## [0.1.3] - 2018-12-27
 ### Fix
 - Fix possible string conversion error when using routable

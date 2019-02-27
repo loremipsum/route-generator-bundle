@@ -2,7 +2,7 @@
 
 namespace LoremIpsum\RouteGeneratorBundle\DependencyInjection;
 
-use LoremIpsum\RouteGeneratorBundle\RouteHandlerInterface;
+use LoremIpsum\RouteGeneratorBundle\Model\RouteHandlerInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
