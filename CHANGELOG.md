@@ -2,6 +2,7 @@
 
 ## [Unreleased 0.2.0]
 ### Change
+- **BC-BREAK** Set supported php version to ^7.1
 - **BC-BREAK** Move RouteGenerator to Utils namespace
 - **BC-BREAK** Move RouteGeneratorInterface to Model namespace
 - **BC-BREAK** Move RouteHandlerInterface to Model namespace

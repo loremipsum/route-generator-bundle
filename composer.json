@@ -6,9 +6,9 @@
     "homepage": "https://www.loremipsum.at",
     "license": "MIT",
     "require": {
-        "php": ">=7.0",
-        "symfony/http-foundation": "^3.4 || ^4.0",
-        "symfony/framework-bundle": "^3.4 || ^4.0"
+        "php": "^7.1",
+        "symfony/http-foundation": "^4.0",
+        "symfony/framework-bundle": "^4.0"
     },
     "require-dev": {
     },
