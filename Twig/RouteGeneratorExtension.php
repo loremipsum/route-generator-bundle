@@ -4,6 +4,7 @@ namespace LoremIpsum\RouteGeneratorBundle\Twig;
 
 use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
 use LoremIpsum\RouteGeneratorBundle\Model\RouteGeneratorInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Extension\AbstractExtension;
 
 class RouteGeneratorExtension extends AbstractExtension
@@ -21,7 +22,7 @@ class RouteGeneratorExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('pathTo', [$this, 'pathTo'])
+            new \Twig_SimpleFunction('pathTo', [$this, 'pathTo']),
         ];
     }
 
@@ -32,15 +33,15 @@ class RouteGeneratorExtension extends AbstractExtension
         ];
     }
 
-    public function pathTo($value, $view = null, $context = [])
+    public function pathTo($value, ?string $view = null, array $context = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH)
     {
-        return $this->routeGenerator->generate($value, $view, $context);
+        return $this->routeGenerator->generate($value, $view, $context, $referenceType);
     }
 
-    public function isRoutable($value, $view = null, $context = [])
+    public function isRoutable($value, ?string $view = null, array $context = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH)
     {
         try {
-            $this->routeGenerator->generate($value, $view, $context);
+            $this->routeGenerator->generate($value, $view, $context, $referenceType);
         } catch (MissingRouteHandlerException $e) {
             return false;
         }

@@ -1,11 +1,15 @@
 # RouteGeneratorBundle Changelog
 
 ## [Unreleased 0.2.0]
+### Add
+- Support route $referenceType (defaults to `UrlGeneratorInterface::ABSOLUTE_PATH`)
+
 ### Change
 - **BC-BREAK** Set supported php version to ^7.1
 - **BC-BREAK** Move RouteGenerator to Utils namespace
 - **BC-BREAK** Move RouteGeneratorInterface to Model namespace
 - **BC-BREAK** Move RouteHandlerInterface to Model namespace
+- **BC-BREAK** Change in RouteHandlerInterface to support route $referenceType
 
 ## [0.1.3] - 2018-12-27
 ### Fix
