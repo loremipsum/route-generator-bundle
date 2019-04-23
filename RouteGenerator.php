@@ -3,6 +3,7 @@
 namespace LoremIpsum\RouteGeneratorBundle;
 
 use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 
 class RouteGenerator implements RouteGeneratorInterface
@@ -22,10 +23,10 @@ class RouteGenerator implements RouteGeneratorInterface
         $this->router = $router;
     }
 
-    public function generate($value, $view = null, $context = [])
+    public function generate($value, $view = null, $context = [], $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH)
     {
         foreach ($this->handlers as $handler) {
-            $route = $handler->handle($value, $view, $context);
+            $route = $handler->handle($value, $view, $context, $referenceType);
             if ($route) {
                 return $route;
             }
