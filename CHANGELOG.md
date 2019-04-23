@@ -6,8 +6,6 @@
 - **BC-BREAK** Move RouteGenerator to Utils namespace
 - **BC-BREAK** Move RouteGeneratorInterface to Model namespace
 - **BC-BREAK** Move RouteHandlerInterface to Model namespace
-- **BC-BREAK** Change in RouteHandlerInterface to support route $referenceType
-- **BC-BREAK** Change interface RouteHandlerInterface and RouteGeneratorInterface to support $referenceType
 
 ## [0.2.0] - 2019-04-23
 ### Add
