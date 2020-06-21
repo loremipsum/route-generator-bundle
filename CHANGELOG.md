@@ -1,6 +1,6 @@
 # RouteGeneratorBundle Changelog
 
-## [Unreleased 0.3.0]
+## [0.3.0] - 2020-06-21
 ### Change
 - **BC-BREAK** Set supported php version to ^7.1
 - **BC-BREAK** Move RouteGenerator to Utils namespace
