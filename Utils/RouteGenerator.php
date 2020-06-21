@@ -29,7 +29,7 @@ class RouteGenerator implements RouteGeneratorInterface
     {
         foreach ($this->handlers as $handler) {
             $route = $handler->handle($value, $view, $context, $referenceType);
-            if ($route) {
+            if ($route !== null) {
                 return $route;
             }
         }
