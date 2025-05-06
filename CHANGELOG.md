@@ -1,5 +1,9 @@
 # RouteGeneratorBundle Changelog
 
+## [0.4.0] - 2025-05-06
+### Change
+- Support symfony 7
+
 ## [0.3.0] - 2020-06-21
 ### Change
 - **BC-BREAK** Set supported php version to ^7.1
