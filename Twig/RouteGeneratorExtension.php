@@ -6,6 +6,8 @@ use LoremIpsum\RouteGeneratorBundle\Exception\MissingRouteHandlerException;
 use LoremIpsum\RouteGeneratorBundle\Model\RouteGeneratorInterface;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use Twig\TwigTest;
 
 class RouteGeneratorExtension extends AbstractExtension
 {
@@ -22,14 +24,14 @@ class RouteGeneratorExtension extends AbstractExtension
     public function getFunctions()
     {
         return [
-            new \Twig_SimpleFunction('pathTo', [$this, 'pathTo']),
+            new TwigFunction('pathTo', [$this, 'pathTo']),
         ];
     }
 
     public function getTests()
     {
         return [
-            new \Twig_Test('routable', [$this, 'isRoutable']),
+            new TwigTest('routable', [$this, 'isRoutable']),
         ];
     }
 
