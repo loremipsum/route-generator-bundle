@@ -11,24 +11,21 @@ use Twig\TwigTest;
 
 class RouteGeneratorExtension extends AbstractExtension
 {
-    /**
-     * @var RouteGeneratorInterface
-     */
-    protected $routeGenerator;
+    protected RouteGeneratorInterface $routeGenerator;
 
     public function __construct(RouteGeneratorInterface $routeGenerator)
     {
         $this->routeGenerator = $routeGenerator;
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('pathTo', [$this, 'pathTo']),
         ];
     }
 
-    public function getTests()
+    public function getTests(): array
     {
         return [
             new TwigTest('routable', [$this, 'isRoutable']),
@@ -40,7 +37,7 @@ class RouteGeneratorExtension extends AbstractExtension
         return $this->routeGenerator->generate($value, $view, $context, $referenceType);
     }
 
-    public function isRoutable($value, ?string $view = null, array $context = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH)
+    public function isRoutable($value, ?string $view = null, array $context = [], int $referenceType = UrlGeneratorInterface::ABSOLUTE_PATH): bool
     {
         try {
             $this->routeGenerator->generate($value, $view, $context, $referenceType);
